@@ -1,0 +1,11 @@
+{
+  "name": "node-pg",
+  "author": "Vawi",
+  "dependencies": {
+    "body-parser": "~1.10.1",
+    "cookie-session": "^1.3.2",
+    "ejs": "~2.1.4",
+    "express": "^4.16.3",
+    "pg": "^6.4.2"
+  }
+}
