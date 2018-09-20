@@ -4,9 +4,9 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var pg = require("pg");
 var app = express();
+const mountRoutes = require('./routes')
 
-var connectionString = "postgres://postgres:123@localhost:5432/postgres";
-
+mountRoutes(app)
 
 app.listen(4000, function () {
     console.log('Server is running on port 4000');
