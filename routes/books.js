@@ -2,7 +2,7 @@ const Router = require('express-promise-router')
 
 const db = require('../db')
 
-
+// get users from a db by his id
 app.get('/:id', (req, res, next) => {
     db.query('SELECT * FROM users WHERE id = $1', [id], (err, res) => {
       if (err) {
@@ -11,6 +11,7 @@ app.get('/:id', (req, res, next) => {
       res.send(res.rows[0])
     })
   })
+
 
 app.get((req, res, next ) => {
     db.query('SELECT * FROM ouvrage'); 

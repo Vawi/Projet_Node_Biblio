@@ -1,5 +1,6 @@
 const { Pool } = require('pg')
 
+// Pool to connect with the db
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
@@ -13,13 +14,12 @@ pool.query('SELECT NOW()', (err, res) => {
   pool.end()
 })
 
+
+// If the connection work, a list of books will apair
 pool.connect(function(err) {
     if (err) throw err;
-    // if connection is successful
     pool.query("SELECT * FROM ouvrage", function (err, result, fields) {
-      // if any error while executing above query, throw error
       if (err) throw err;
-      // if there is no error, you have the result
       console.log(result);
     });
   });
